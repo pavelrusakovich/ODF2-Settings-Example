@@ -1,0 +1,4 @@
+# Project exclude paths
+/Settings-Example-bcb/target/
+/Settings-Example-package/target/
+/Settings-Example-test/target/

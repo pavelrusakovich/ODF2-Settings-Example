@@ -1,0 +1,46 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog ../dbchangelog-3.6.xsd">
+
+    <changeSet author="prusakovich" id="STGS_XMPL_ds_settings_v1_001">
+        <delete tableName="uc_STGS_XMPL_config_v1">
+        </delete>
+    </changeSet>
+
+    <changeSet  author="prusakovich"  id="STGS_XMPL_ds_settings_v1_002">
+        <insert  tableName="uc_STGS_XMPL_config_v1">
+            <column  name="name"  value="favourite-number"/>
+            <column  name="value"  value="9"/>
+        </insert>
+    </changeSet>
+
+    <changeSet  author="prusakovich"  id="STGS_XMPL_ds_settings_v1_0025">
+        <insert  tableName="uc_STGS_XMPL_config_v1">
+            <column  name="name"  value="favourite-meal"/>
+            <column  name="value"  value="pancakes"/>
+        </insert>
+    </changeSet>
+
+    <changeSet  author="prusakovich"  id="STGS_XMPL_ds_settings_v1_003">
+        <createTable tableName="uc_STGS_XMPL_colors_v1">
+            <column  name="hex_code"  type="varchar(7)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column  name="name"  type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="ODF2 archetype" id="STGS_XMPL_ds_settings_v1_004">
+        <loadData commentLineStartsWith="//" encoding="UTF-8" file="colors.csv" relativeToChangelogFile="true" separator="," tableName="uc_STGS_XMPL_colors_v1">
+        </loadData>
+    </changeSet>
+
+    <changeSet  author="prusakovich"  id="STGS_XMPL_ds_settings_v1_005">
+        <insert  tableName="uc_STGS_XMPL_config_v1">
+            <column  name="name"  value="favourite-color"/>
+            <column  name="value"  value="#FF0000"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
